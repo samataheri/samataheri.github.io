@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جزئیات دلخواه</title>
+    <link rel="stylesheet" href="../styles.css"> <!-- لینک به فایل CSS -->
+    <style>
+        * {
+            text-decoration: none;
+            list-style: none;
+            font-family: 'IRANsans';
+        }
+        
+        @font-face {
+            font-family: 'IRANsans', sans-serif;
+            src: url(/weebix/assets/font/IRANSans-web.woff);
+        }
+        
+        body {
+            font-family: 'IRANsans';
+        }
+        
+        header nav a {
+            color: black;
+            font-size: 20px;
+            font-weight: 550;
+        }
+        
+        header nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        header nav .container {
+            width: 80%;
+            height: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            margin: 0 auto;
+        }
+        
+        .container .menu {
+            width: 70%;
+            position: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .menu li {
+            margin: 0 30px;
+        }
+        
+        .menu a:hover {
+            color: #5D56F1;
+        }
+        
+        .btn {
+            border-color: #5D56F1;
+            font-size: 20px;
+            padding: 10px;
+            color: white;
+            background-color: #5D56F1;
+            text-align: center;
+            border-radius: 30px;
+            padding: 10px 20px;
+            transition: 0.3s ease-in-out;
+        }
+        
+        .btn:hover {
+            background-color: white;
+            color: #5D56F1;
+            border-color: #5D56F1;
+        }
+        
+        header nav .container .menu .home {
+            position: relative;
+        }
+        
+        header nav .container .menu .home .sub-menu {
+            display: none;
+            position: absolute;
+            top: 30px;
+            right: 0;
+            min-width: 200px;
+            background-color: white; 
+        }
+        
+        header nav .container .menu .home:hover .sub-menu {
+            display: flex;
+            flex-direction: column;
+            border-radius: 10px;
+            background-color: #5D56F1;
+        }
+        
+        header nav .container .menu .home .sub-menu .sub-item {
+            padding: 10px 20px;
+            border-bottom: 1px solid gray;
+        }
+        
+        header nav .container .menu .home .sub-menu .sub-item a{
+            color: white;
+        }
+        
+        header nav .container .menu .home .sub-menu .sub-item .link:hover {
+            color: black;
+            transition: all 0.3s ease;
+        }
+        
+        
+        header nav .container .menu .page {
+            position: relative;
+        }
+        
+        header nav .container .menu .page .sub-menu {
+            display: none;
+            position: absolute;
+            top: 30px;
+            right: 0;
+            min-width: 200px;
+            background-color: white;
+        }
+        
+        header nav .container .menu .page:hover .sub-menu {
+            display: flex;
+            flex-direction: column;
+            border-radius: 10px;
+            background-color: #5D56F1;
+        }
+        
+        header nav .container .menu .page .sub-menu .sub-item {
+            padding: 10px 20px;
+            border-bottom: 1px solid gray;
+        }
+        
+        header nav .container .menu .page .sub-menu .sub-item a{
+            color: white;
+        }
+        
+        header nav .container .menu .page .sub-menu .sub-item .link:hover {
+            color: black;
+            transition: all 0.3s ease;
+        }
+
+        .hero {
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f8f8f8;
+            width: 100%;
+            padding: 20px 0;
+        }
+
+        .hero .container {
+            max-width: 800px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .hero .container h1 {
+            font-size: 66px;
+            margin: 0;
+        }
+
+        .sec2{
+            padding: 80px;
+        }
+
+        
+        .sec2 .items {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .sec2 .item {
+            background-color: #f8f8f8;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .sec2 .item:hover {
+            transform: scale(1.02);
+        }
+
+        .sec2 .item h1 {
+            font-size: 18px;
+            color: #333;
+            text-align: right;  
+            margin: 0;
+            font-weight: 600;
+        }
+
+
+        footer {
+            background-color: #f8f9fc;
+            color: black;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .footer-section {
+            width: 30%;
+        }
+
+        .footer-section h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin: 5px 0;
+        }
+
+        .footer-section ul li a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .footer-section ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+        
+            .footer-section {
+                width: 90%;
+                margin-bottom: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .footer-section h3 {
+                font-size: 20px;
+            }
+        
+            .footer-section p,
+            .footer-section ul li {
+                font-size: 14px;
+            }
+        
+            .footer-bottom {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body dir="rtl">
+
+<header>
+    <nav>
+        <div class="container">
+            <ul class="menu">
+                <li class="item home"><a href class="link">خانه</a>
+                    <ul class="sub-menu">
+                        <li class="sub-item"><a href>صفحه
+                                لودینگ1</a></li>
+                        <li class="sub-item"><a href>صفحه
+                                لودینگ2</a></li>
+                        <li class="sub-item"><a href>صفحه
+                                لودینگ3</a></li>
+                    </ul>
+                </li>
+                <li class="item"><a href class="link">درباره ما</a></li>
+                <li class="item"><a href class="link">خدمات</a></li>
+                <li class="item"><a href class="link">نمونه
+                        کارها</a></li>
+                <li class="item"><a href class="link">وبلاگ</a></li>
+                <li class="item page"><a href class="link">صفحات</a>
+                    <ul class="sub-menu">
+                        <li class="sub-item"><a href="pages/details.html">جزيات دلخواه
+                                </a></li>
+                        <li class="sub-item"><a href="pages/faq.html">سوالات متداول
+                                </a></li>
+                        <li class="sub-item"><a href="pages/404.html">۴۰۴
+                                </a></li>
+                            </ul>
+                </li>
+                <ul>
+                    <button class="btn">مشاوره رایگان</button>
+                </div>
+            </nav>
+        </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>سوالات متداول</h1>
+        </div>
+    </section>
+
+    <section class="sec2">
+        <div class="items">
+            <div class="item"><h1
+                >تفاوت بین توسعه جبهه و پس زمینه چیست؟
+                </h1>
+                </div>
+            <div class="item"><h1>
+                API ها چیست و چگونه در توسعه نرم افزار استفاده می شود؟
+            </h1>
+            </div>
+            <div class="item"><h1>چگونه می توانم مهارت های توسعه نرم افزار خود را بهبود بخشم؟
+            </h1>
+            </div>
+            <div class="item"><h1>
+            ملاحظات اخلاقی در توسعه هوش مصنوعی برای شرکت های نرم افزاری چیست؟
+            </h1>
+            </div>
+            <div class="item"><h1> 
+            مدل های مختلف تعامل ارائه شده توسط شرکت های نرم افزاری چیست؟
+            </h1>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>درباره ما</h3>
+                <p>ما یک شرکت پیشرو در ارائه خدمات طراحی وب هستیم. هدف
+                    ما ارتقاء تجربه کاربری است.</p>
+            </div>
+            <div class="footer-section">
+                <h3>لینک‌های سریع</h3>
+                <ul>
+                    <li><a href="#">صفحه اصلی</a></li>
+                    <li><a href="#">خدمات</a></li>
+                    <li><a href="#">تماس با ما</a></li>
+                    <li><a href="#">حریم خصوصی</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>تماس با ما</h3>
+                <ul>
+                    <li>آدرس: تهران، ایران</li>
+                    <li>تلفن: (+0) 123 456 789 </li>
+                    <li>ایمیل: info@example.com</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; کپی رایت © 1403 Weebix.کلیه حقوق محفوظ است.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
